@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vueTest</title>
+    <link rel="stylesheet" href="/public/css/index.css">
+</head>
+<body>
+    <div id="app" class="main">
+        <div class="main-hd">
+            <h1>百卓优采前端自动生成</h1>
+        </div>
+        <div class="main-bd">
+            <!--<nav>-->
+                <!--<ul class="nav-left">-->
+                    <!--<li>新增</li>-->
+                    <!--<li>列表</li>-->
+                <!--</ul>-->
+            <!--</nav>-->
+            <div id="head">
+                <button @click="addList">添加</button>
+            </div>
+
+            <list-component v-for="lst in listArr" :types="lst.types" :type="lst.type" :index="$index"></list-component>
+        </div>
+    </div>
+
+    <template id="listTemplate">
+        <div class="cont-list">
+            <span class="icon-close" @click="removeList(index)">x</span>
+            <ul>
+                <li>
+                    <label class="item-tit">搜索项名称</label>
+                    <input type="text" name="title" class="item-input" value=""/>
+                </li>
+                <li>
+                    <label class="item-tit">搜索字段名</label>
+                    <input type="text" name="name" class="item-input"/>
+                </li>
+                <li>
+                    <label class="item-tit">类型</label>
+                    <select v-model="type" class="item-input">
+                        <option v-for="item in types" value="{{item.value}}">{{item.text}}</option>
+                    </select>
+                </li>
+                <li>
+                    <label class="item-tit">样式</label>
+                    <input type="text" name="name" class="item-input" value=""/>
+                </li>
+
+                <li v-show="type == 'text'">
+                    <label class="item-tit">暗注释</label>
+                    <input type="text" name="" class="item-input" value="">
+                </li>
+                <li v-show="type == 'text'">
+                    <label class="item-tit">最大可输入</label>
+                    <input type="text" name="" class="item-input">
+                </li>
+                <li v-show="type == 'text'">
+                    <label class="item-tit">是否有建议词</label>
+                    <select name="" class="item-input">
+                        <option value="1">true</option>
+                        <option value="0">false</option>
+                    </select>
+                </li>
+
+                <li v-show="type == 'select' || type == 'dropcheck'">
+                    <label class="item-tit">可选项</label>
+                    <input type="text" name="" class="item-input">
+                </li>
+                <li v-show="type == 'select'">
+                    <label class="item-tit">optionText</label>
+                    <input type="text" name="" class="item-input">
+                </li>
+                <li v-show="type == 'select'">
+                    <label class="item-tit">optionValue</label>
+                    <input type="text" name="" class="item-input">
+                </li>
+
+                <li v-show="type == 'date'">
+                    <label class="item-tit">是否有快捷选择</label>
+                    <select name="" class="item-input">
+                        <option value="1">true</option>
+                        <option value="0">false</option>
+                    </select>
+                </li>
+
+                <li v-show="type == 'department' || type == 'supplierGroup' || type == 'cate'">
+                    <label class="item-tit">父元素ID</label>
+                    <input type="text" name="" class="item-input">
+                </li>
+                <li v-show="type == 'department' || type == 'supplierGroup' || type == 'cate'">
+                    <label class="item-tit">显示名</label>
+                    <input type="text" name="" class="item-input">
+                </li>
+
+
+                <li v-show="type == 'pop'">
+                    <label class="item-tit">显示名</label>
+                    <input type="text" name="" class="item-input">
+                </li>
+                <li v-show="type == 'pop'">
+                    <label class="item-tit">隐藏元素的class名</label>
+                    <input type="text" name="" class="item-input">
+                </li>
+            </ul>
+        </div>
+    </template>
+    <script src="/dist/js/index.js"></script>
+</body>
+</html>

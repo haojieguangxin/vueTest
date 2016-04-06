@@ -1,0 +1,59 @@
+@import "base/reset.css";
+@import "base/atom.css";
+.main {
+    width: 1260px;
+    margin: auto;
+}
+.main-hd {
+    margin: 15px 0 15px;
+}
+.main-hd h1 {
+    text-align: center;
+    font-size: 24px;
+}
+.main-bd {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #000;
+    height: 500px;
+}
+.nav-left {
+    float: left;
+    margin-left: -20px
+}
+.nav-left li {
+    padding: 10px 0;
+    margin: 10px 0;
+    border: 1px solid #cccccc;
+    width: 80px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.cont-list {
+    border: 1px solid #ccc;
+    width: 400px;
+    height: 300px;
+    margin: 10px;
+    float: left;
+}
+.cont-list li {
+    margin: 10px;
+}
+
+.cont-list .icon-close {
+    float: right;
+    margin: 10px;
+}
+
+.item-tit {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+}
+.item-input {
+    height: 20px;
+    line-height: 10px;
+    border: 1px solid #81beeb;
+}
